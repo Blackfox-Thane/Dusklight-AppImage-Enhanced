@@ -6,7 +6,7 @@ ARCH=$(uname -m)
 
 echo "Installing package dependencies..."
 echo "---------------------------------------------------------------"
-sudo pacman -Syu --noconfirm \
+pacman -Syu --noconfirm \
   clang \
   cmake \
   freetype2 \
@@ -16,7 +16,9 @@ sudo pacman -Syu --noconfirm \
 
 echo "Installing debloated packages..."
 echo "---------------------------------------------------------------"
-./get-debloated-pkgs --add-common --prefer-nano
+get-debloated-pkgs --add-common --prefer-nano
 
 # Comment this out if you need an AUR package
-sudo ./make-aur-package dusklight
+make-aur-package dusklight
+
+
